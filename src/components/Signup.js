@@ -1,14 +1,16 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 export default function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup, currentUser } = useAuth()
+    const { signup } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    let navigate = useNavigate()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -21,6 +23,7 @@ export default function Signup() {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
+            navigate('/')
         } catch {
             setError("Failed to create an account")
         }
@@ -34,7 +37,7 @@ export default function Signup() {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mt-2">Sign Up</h2>
-                    {JSON.stringify(currentUser)}
+                    
                     {error && <Alert variant="danger">{error}</Alert>} 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
@@ -58,7 +61,7 @@ export default function Signup() {
 
             </Card>
             <div className="w-100 text-center mt-2">
-                Already have an account? Log In
+                Already have an account? <NavLink to="/login">Log In Here</NavLink>
             </div>       
         </>
     )
