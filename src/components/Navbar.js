@@ -5,6 +5,7 @@ import { GiInjustice, GiScales } from 'react-icons/gi';
 import { Button } from './Button';
 import '../Static/CSS/Navbar.css';
 import { IconContext } from 'react-icons/lib'
+import nzaLogo from '../Static/Images/logo.png'
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -32,8 +33,7 @@ function Navbar() {
                 <div className='navbar'>
                     <div className='navbar-container container'>
                         <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                            <GoLaw className='navbar-icon' />
-                            NZA Lawfirm
+                            <img className='navbar-icon' src={nzaLogo} alt="NZA Logo" />
                         </NavLink>
                         <div className='menu-icon' onClick={handleClick}>
                             {click ? <GiScales /> : <GiInjustice />}

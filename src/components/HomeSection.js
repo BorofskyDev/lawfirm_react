@@ -10,18 +10,21 @@ import {
 import { ImYoutube2 } from 'react-icons/im'
 import '../Static/CSS/HeroSection.css';
 import '../Static/CSS/HomeSocial.css';
+import logo from '../Static/Images/chicago.jpg'
+
 
 function HeroSection({
     lightBg, topLine, lightText, lightTextDesc,
-    headline, description, img, alt, imgStart,
-    headerText, socialText, pitchText,
+    headline, description, alt, imgStart,
+    headerText, socialText, pitchText, 
 
 }) {
     return (
         <>
-            <div className={lightBg ? 'home__hero-section' : 'home__hero-section darkBg'}>
+            <div className='home__hero-section darkBg' >
+
                 <div className='container'>
-                    <div className="row home__hero-row" style={{ display: 'flex', flexDirection: imgStart === 'start' ? 'row-reverse' : 'row' }}>
+                    <div className="row home__hero-row" >
                         <div className="col">
                             <div className="home__hero-text-wrapper">
                                 <div className="top-line">{topLine}</div>
@@ -30,9 +33,9 @@ function HeroSection({
                             </div>
                         </div>
                         <div className="col">
-                            <div className="home__hero-img-wrapper" >
-                                <img src={img} alt={alt} />
+                            <div className="home-img-wrapper" >
                             </div>
+                        <img className="hero_img" src={logo} alt={alt} />
                         </div>
                     </div>
                 </div>

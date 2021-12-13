@@ -1,6 +1,5 @@
 import React from "react"
 import Signup from "./Signup"
-import { Container } from 'react-bootstrap'
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Dashboard from "./Dashboard"
@@ -8,7 +7,6 @@ import Login from './Login'
 import PrivateRoute from './PrivateRoute'
 import ForgotPassword from './ForgotPassword'
 import UpdateProfile from './UpdateProfile'
-import HomeSection from './HomeSection'
 import Navbar from './Navbar'
 import Home from './Home'
 import Footer from './Footer'
