@@ -1,9 +1,9 @@
 import { renderMatches } from "react-router-dom";
 
 export const homeObjOne = {
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: true,
     topLine: 'A Global Firm',
     headline: 'A Global firm with a local touch',
     description: 'Whether you need us abroad or at home, we\'ll be there for you',

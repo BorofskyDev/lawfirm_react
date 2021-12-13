@@ -10,6 +10,9 @@ import ForgotPassword from './ForgotPassword'
 import UpdateProfile from './UpdateProfile'
 import HomeSection from './HomeSection'
 import Navbar from './Navbar'
+import Home from './Home'
+import Footer from './Footer'
+import '../Static/CSS/App.css'
 
 function App() {
   return (
@@ -18,7 +21,7 @@ function App() {
           <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<HomeSection/>} />
+                <Route path="/" element={<Home/>} />
           </Routes>
             <AuthProvider>
               <Routes>
@@ -37,6 +40,7 @@ function App() {
                 <Route path="/forgot-password" element={<ForgotPassword/>} />
               </Routes>
             </AuthProvider>
+            <Footer />
           </Router>
         </div>
      
