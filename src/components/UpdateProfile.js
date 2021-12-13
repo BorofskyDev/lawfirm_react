@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext'
 import { NavLink, useNavigate } from 'react-router-dom'
-
+// adding this here as a test
 export default function UpdateProfile() {
     const emailRef = useRef()
     const passwordRef = useRef()
