@@ -8,19 +8,23 @@ import Login from './Login'
 import PrivateRoute from './PrivateRoute'
 import ForgotPassword from './ForgotPassword'
 import UpdateProfile from './UpdateProfile'
+import HomeSection from './HomeSection'
+import Navbar from './Navbar'
 
 function App() {
   return (
     
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      > 
-        <div className="w-100" style={{ maxWidth: '400px' }} >
+        <div>
           <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<HomeSection/>} />
+          </Routes>
             <AuthProvider>
               <Routes>
-                <Route path="/" element={
+                <Route path="/signup" element={<Signup/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/dashboard" element={
                   <PrivateRoute>
                     <Dashboard />
                   </PrivateRoute>
@@ -30,14 +34,12 @@ function App() {
                     {<UpdateProfile/>}
                   </PrivateRoute>
                 } />
-                <Route path="/signup" element={<Signup/>} />
-                <Route path="/login" element={<Login/>} />
                 <Route path="/forgot-password" element={<ForgotPassword/>} />
               </Routes>
             </AuthProvider>
           </Router>
         </div>
-      </Container>
+     
     
   );
 }
